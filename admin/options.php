@@ -66,12 +66,12 @@ function emwa_settings_init(  ) {
       __('Other Menus', 'editor-menu-widget-access'),
       'emwa_field_menus_cb',
       'emwaPage',
-      'emwaOther_section',
-      [
+      'emwaOther_section'
+      /*[
           'label_for'         => 'emwa_field_menus',
           'class'             => 'emwa_row',
           'emwa_custom_data' => 'custom',
-      ]
+      ]*/
   );
 }
 
