@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: widgets, widget, appearance, menus, menu, navigation, navigation menu, nav menu, admin, editor, editors, shop manager, woocommerce, users, wp-admin, theme options, options, customize, customise, wordpress, plugin
 Requires at least: 3.0.1
 Tested up to: 4.8
-Stable tag: 2.3
+Stable tag: 2.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 
 == Changelog ==
 
+= 2.3.1 =
+* Fixed bug in options page.
+
 = 2.3 =
 * Fixed version of v2.1 (thanks to @howdy_mcgee)
 
@@ -95,6 +98,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 * Beta release.
 
 == Upgrade Notice ==
+
+= 2.3.1 =
+Fixed bug in options page.
 
 = 2.3 =
 This is a fixed version of v2.1.
