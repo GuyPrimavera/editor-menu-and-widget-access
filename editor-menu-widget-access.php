@@ -1,15 +1,14 @@
 <?php
 /**
  * Plugin Name: Editor Menu and Widget Access
- * Plugin URI: https://designbymito.com/
- * Description: Allow Editors access to the Menus and Widgets areas of WordPress admin's Appearance menu, whilst hiding the theme selection page.
+ * Plugin URI: https://wordpress.org/plugins/editor-menu-and-widget-access/
+ * Description: Allow and control Editors' access to the Menus, Widgets and Customize areas of the Appearance menu. You can also hide custom theme options.
  * Author: Guy Primavera
- * Author URI: http://www.guyprimavera.com/
- * Version: 2.0
+ * Author URI: http://guyprimavera.com/
+ * Version: 2.1
  * Text Domain: editor-menu-widget-access
  * License: GPL2
  *
- * Copyright 2016 Guy Primavera
  */
 
 if ( __FILE__ == $_SERVER['SCRIPT_FILENAME'] ) { exit; }
