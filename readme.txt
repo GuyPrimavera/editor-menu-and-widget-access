@@ -3,12 +3,12 @@ Contributors: GuyPrimavera, designbymito
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YVPWSJB4SPN5N
 Tags: widgets, widget, appearance, menus, menu, navigation, navigation menu, nav menu, admin, editor, editors, shop manager, woocommerce, users, wp-admin, theme options, options, customize, customise, wordpress, plugin
 Requires at least: 3.0.1
-Tested up to: 4.8
-Stable tag: 2.3.2
+Tested up to: 4.9.4
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Allow and control Editors' access to the Menus, Widgets and Customize areas of the Appearance menu. You can also hide custom theme options.
+Allow and control Editors' access to the WordPress Appearance menu, and hide other menus and admin bar items.
 
 == Description ==
 
@@ -18,7 +18,7 @@ This is a common task that would be useful for clients to manage themselves to g
 
 This plugin also gives access to the **Customize** submenu and other theme options, but these can be hidden through the options page at **Appearance > Editor Access** if you wish.
 
-You can now select other menus to hide from Editors and Shop Managers (e.g. Custom theme or plugin options pages).
+You can now select other menus to hide from Editors and Shop Managers (e.g. Custom theme or plugin options pages), as well as hiding **any elements on the Admin Bar**.
 
 **Features**
 
@@ -26,12 +26,13 @@ You can now select other menus to hide from Editors and Shop Managers (e.g. Cust
 * **Theme Options** remain hidden from these user roles.
 * **Hide custom options pages** from these users (if your theme/plugin has a custom settings page you wish to hide).
 * **Hide any other menus** or submenus. Simply select which menus you wish to hide.
+* **Hide admin bar menus and elements**. Choose which elements you wish to hide.
 
 == Installation ==
 
 **Via FTP**
 
-1. Upload editor-menu-widget-access to the /wp-content/plugins/ directory.
+1. Upload editor-menu-and-widget-access to the /wp-content/plugins/ directory.
 2. Activate Editor Menu and Widget Access through the 'Plugins' menu in WordPress.
 3. That's it! The default settings are applied automatically, and you can hide other pages in the options page at **Appearance > Editor Access** if you wish.
 
@@ -54,10 +55,23 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 
 == Screenshots ==
 
-1. The options page to control exactly what Editors and Shop Managers can access.
-2. The Appearance menu visible to the Editor (with "customize" set to "hidden" in this example).
+1. The new options page to control exactly what Editors and Shop Managers can access.
+2. Hide anything or everything from the admin bar.
+3. The new "Help" tab.
+4. The Appearance menu visible to the Editor (with "customize" set to "hidden" in this example).
+5. The "Widgets" page being modified by an Editor.
 
 == Changelog ==
+
+= 3.0 =
+* Added Admin Bar support for removing adminbar nodes/menus.
+* Tabbed options page and redesign.
+* Now allows hiding of menus with higher capabilities, in case another plugin has modified the permissions for Editors or Shop Managers.
+* MVC model implemented into code.
+* "Help" tab added to report and resolve issues more efficiently.
+* Text-domain updated to match WP repo.
+* Fixed localization issues.
+* Re-added some Italian language support.
 
 = 2.3.2 =
 * Fixed bug in Customizer when not logged-in as an Editor or Shop Manager.
@@ -103,6 +117,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 * Beta release.
 
 == Upgrade Notice ==
+
+= 3.0 =
+You can now remove adminbar menus and elements!
 
 = 2.3.2 =
 Fixed bug in Customizer and Theme Preview.

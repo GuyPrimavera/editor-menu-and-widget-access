@@ -4,7 +4,7 @@ if ( __FILE__ == $_SERVER['SCRIPT_FILENAME'] ) { exit; }
 function emwa_new_admin_menu() {
 
 	$user = new WP_User(get_current_user_id());
-	$role = false; // Thanks @howdy_mcgee!
+	$role = false; // @howdy_mcgee
 
 	if (!empty( $user->roles) && is_array($user->roles)) {
 		foreach ($user->roles as $role)
@@ -83,12 +83,11 @@ function emwa_new_admin_menu() {
 		}
 
 	}
+
 }
 add_action('admin_menu', 'emwa_new_admin_menu', 99);
 
-
 /// Customiser modifications
-
 function emwa_customiser_mods( $components ) {
 
 	$user = new WP_User(get_current_user_id());
@@ -120,9 +119,7 @@ function emwa_customiser_mods( $components ) {
 }
 add_filter( 'customize_loaded_components', 'emwa_customiser_mods' );
 
-
 /// Adminbar links
-
 function emwa_adminbar_link() {
 
 	$user = new WP_User(get_current_user_id());
@@ -155,9 +152,7 @@ function emwa_adminbar_link() {
 }
 add_action( 'wp_before_admin_bar_render', 'emwa_adminbar_link', 999 );
 
-
 /// Customiser options - backup
-
 function emwa_hide_custom() {
 
 	$user = new WP_User(get_current_user_id());

@@ -1,0 +1,138 @@
+// CSS for options page
+
+.trans{transition:.2s all linear;-webkit-transition:.2s all linear;-moz-transition:.2s all linear;-o-transition:.2s all linear;}
+.mdShadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.mdShadowHover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+// Options tabs
+.nav-tab-wrapper {
+	a.nav-tab {
+		&:before {
+			line-height: 1.2;
+			margin-right: 5px;
+		}
+	}
+}
+
+// Options page
+table.form-table {
+	tr {
+		td, th {
+			padding: 5px 0px;
+		}
+	}
+}
+
+
+// Menus
+ol.emwaGroupParent {
+	width: 350px;
+  max-width: 100%;
+	.emwaListParent {
+		list-style-type: none;
+	  background: rgba(0, 0, 0, 0.1);
+	  margin-bottom: 6px;
+	  padding: 10px;
+		input {
+			.trans;
+			ol, span, li {
+				.trans;
+			}
+			&:checked ~ ol {
+				height: 0px;
+				overflow: hidden;
+			}
+			&:checked ~ span {
+				opacity: 0.5;
+			}
+		}
+		.emwaGroupChild {
+			margin: 0 0 0 45px;
+			.emwaListChild {
+			  margin: 5px 0 0 0;
+			}
+		}
+	}
+}
+
+// Admin bar
+.emwaGroupAdminbar {
+	width: 350px;
+  max-width: 100%;
+	& > li {
+	  background: rgba(0, 0, 0, 0.1);
+	  padding: 10px;
+	}
+	& & > li {
+	  background: none;
+	  padding: 0px;
+	  margin-top: 5px;
+	}
+	li {
+		ol {
+		  opacity: 1;
+		  li {
+
+		  }
+		}
+	}
+	input {
+		.trans;
+		ol, li, span {
+			.trans;
+		}
+		&:checked ~ ol {
+			display:none;
+		}
+		&:checked ~ span {
+			opacity: 0.5;
+		}
+	}
+}
+
+// Help page
+ul#emwaHelp {
+	display: block;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: stretch;
+	li {
+		width: 240px;
+		max-width: 100%;
+		float: left;
+		display: inline-block;
+		display: flex;
+		margin: 10px;
+		a {
+			display: inline-block;
+			display: flex;
+			flex-direction: column;
+			background: rgba(0, 0, 0, 0.1);
+			padding: 20px;
+			text-align: center;
+			width: 100%;
+			.trans;
+			.mdShadow;
+			&:hover, &:active, &:focus, &:target {
+				background: rgba(0, 0, 0, 0.15);
+				.mdShadowHover;
+			}
+			h3, h4 {
+				text-decoration: none!important;
+			}
+			h3 {
+				opacity: 1;
+			}
+			h4 {
+				opacity: 1;
+			}
+		}
+	}
+}
