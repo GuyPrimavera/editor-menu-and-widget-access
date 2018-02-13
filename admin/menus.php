@@ -115,8 +115,8 @@ function emwa_customiser_mods( $components ) {
       }
 
     }
-    return $components;
 	}
+  return $components;
 }
 add_filter( 'customize_loaded_components', 'emwa_customiser_mods' );
 

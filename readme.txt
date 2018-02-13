@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: widgets, widget, appearance, menus, menu, navigation, navigation menu, nav menu, admin, editor, editors, shop manager, woocommerce, users, wp-admin, theme options, options, customize, customise, wordpress, plugin
 Requires at least: 3.0.1
 Tested up to: 4.8
-Stable tag: 2.3.1
+Stable tag: 2.3.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,10 +54,15 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 
 == Screenshots ==
 
-1. The new options page to control exactly what Editors and Shop Managers can access.
+1. The options page to control exactly what Editors and Shop Managers can access.
 2. The Appearance menu visible to the Editor (with "customize" set to "hidden" in this example).
 
 == Changelog ==
+
+= 2.3.2 =
+* Fixed bug in Customizer when not logged-in as an Editor or Shop Manager.
+* Fixed bug in Theme Preview for Shoreditch theme.
+* Tested with WP 4.8-beta.
 
 = 2.3.1 =
 * Fixed bug in options page.
@@ -98,6 +103,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 * Beta release.
 
 == Upgrade Notice ==
+
+= 2.3.2 =
+Fixed bug in Customizer and Theme Preview.
 
 = 2.3.1 =
 Fixed bug in options page.

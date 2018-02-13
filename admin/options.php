@@ -67,12 +67,25 @@ function emwa_settings_init(  ) {
       'emwa_field_menus_cb',
       'emwaPage',
       'emwaOther_section'
-      /*[
-          'label_for'         => 'emwa_field_menus',
-          'class'             => 'emwa_row',
-          'emwa_custom_data' => 'custom',
-      ]*/
   );
+
+// Toolbar menus section
+  /*
+  add_settings_section(
+      'emwaToolbar_section',
+      __('<i class="dashicons-before dashicons-admin-post"></i> Hide Toolbar (Admin Bar) Menus', 'editor-menu-widget-access'),
+      'emwaToolbar_section_cb',
+      'emwaPage'
+  );
+
+  add_settings_field(
+      'emwa_toolbar_menus',
+      __('Toolbar (Admin Bar) Menus', 'editor-menu-widget-access'),
+      'emwa_toolbar_menus_cb',
+      'emwaPage',
+      'emwaToolbar_section'
+  );
+  */
 }
 
 
@@ -134,6 +147,11 @@ function emwaOther_section_cb($args) {
     	<p><i>Please note: Some of these menu items are already hidden from Editors/Shop Managers, but you can select them again here to make sure.</i></p>' );
 }
  
+function emwaToolbar_section_cb($args) {
+	echo __( '<p>Select the Toolbar (Admin Bar) menus to <strong>hide from Editors and Shop Managers</strong>:</p>
+    	<p><i>Please note: Some of these menu items are already hidden from Editors/Shop Managers, but you can select them again here to make sure.</i></p>' );
+}
+ 
 // Other Menus callback
  
 function emwa_field_menus_cb($args) {
@@ -188,10 +206,25 @@ function emwa_field_menus_cb($args) {
 			}
 		}
 		echo '</ol>';
-		//echo '<pre>' . print_r($menuSubItems, true) . '</pre>'; // For testing.
-		?>
+		//echo '<pre>' . print_r($menuItems, true) . '</pre>'; // For testing.
+}
 
-    <?php
+
+// Toolbar Menus callback
+ 
+function emwa_toolbar_menus_cb($args) {
+
+  $options = get_option('emwa_settings');
+	global $wp_admin_bar;
+	//$toolbarNodes = $wp_admin_bar->get_nodes();
+
+	//$toolbarNodes = global $wp_admin_bar;
+	$toolbarNodes = $wp_admin_bar->get_nodes();
+
+
+	//echo '<pre>'; print_r( $toolbarNodes ); echo '</pre>';
+	//echo '<pre>'; print_r( $wp_admin_bar ); echo '</pre>';
+
 }
 
 /// Display the page
