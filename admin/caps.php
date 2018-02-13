@@ -13,7 +13,6 @@ function emwa_add_cap( $caps ) {
 	return $caps;
 	
 }
-
 add_filter( 'user_has_cap', 'emwa_add_cap' );
 
 
@@ -22,6 +21,7 @@ add_filter( 'user_has_cap', 'emwa_add_cap' );
 function emwa_set_capabilities() {
 
     $editor = get_role( 'editor' );
+    $shopMan = get_role( 'shop_manager' );
 
     $caps = array(
         'edit_themes',
@@ -34,10 +34,16 @@ function emwa_set_capabilities() {
     foreach ( $caps as $cap ) {
     
         // Remove the capability.
-        $editor->remove_cap( $cap );
+        if( !empty( $editor ) ) {
+            $editor->remove_cap( $cap );
+        }
+
+        if( !empty( $shopMan ) ) {
+            $shopMan->remove_cap( $cap );
+        }
+
     }
 }
 add_action( 'init', 'emwa_set_capabilities' );
-
 
 ?>
