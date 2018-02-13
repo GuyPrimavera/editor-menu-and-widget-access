@@ -1,0 +1,142 @@
+.trans {
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -o-transition: .2s all linear;
+}
+.mdShadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.mdShadowHover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.nav-tab-wrapper a.nav-tab:before {
+  line-height: 1.2;
+  margin-right: 5px;
+}
+table.form-table tr td,
+table.form-table tr th {
+  padding: 5px 0px;
+}
+ol.emwaGroupParent {
+  width: 350px;
+  max-width: 100%;
+}
+ol.emwaGroupParent .emwaListParent {
+  list-style-type: none;
+  background: rgba(0, 0, 0, 0.1);
+  margin-bottom: 6px;
+  padding: 10px;
+}
+ol.emwaGroupParent .emwaListParent input {
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -o-transition: .2s all linear;
+}
+ol.emwaGroupParent .emwaListParent input ol,
+ol.emwaGroupParent .emwaListParent input span,
+ol.emwaGroupParent .emwaListParent input li {
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -o-transition: .2s all linear;
+}
+ol.emwaGroupParent .emwaListParent input:checked ~ ol {
+  height: 0px;
+  overflow: hidden;
+}
+ol.emwaGroupParent .emwaListParent input:checked ~ span {
+  opacity: 0.5;
+}
+ol.emwaGroupParent .emwaListParent .emwaGroupChild {
+  margin: 0 0 0 45px;
+}
+ol.emwaGroupParent .emwaListParent .emwaGroupChild .emwaListChild {
+  margin: 5px 0 0 0;
+}
+.emwaGroupAdminbar {
+  width: 350px;
+  max-width: 100%;
+}
+.emwaGroupAdminbar > li {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.emwaGroupAdminbar .emwaGroupAdminbar > li {
+  background: none;
+  padding: 0px;
+  margin-top: 5px;
+}
+.emwaGroupAdminbar li ol {
+  opacity: 1;
+}
+.emwaGroupAdminbar input {
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -o-transition: .2s all linear;
+}
+.emwaGroupAdminbar input ol,
+.emwaGroupAdminbar input li,
+.emwaGroupAdminbar input span {
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -o-transition: .2s all linear;
+}
+.emwaGroupAdminbar input:checked ~ ol {
+  display: none;
+}
+.emwaGroupAdminbar input:checked ~ span {
+  opacity: 0.5;
+}
+ul#emwaHelp {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+ul#emwaHelp li {
+  width: 240px;
+  max-width: 100%;
+  float: left;
+  display: inline-block;
+  display: flex;
+  margin: 10px;
+}
+ul#emwaHelp li a {
+  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  transition: .2s all linear;
+  -webkit-transition: .2s all linear;
+  -moz-transition: .2s all linear;
+  -o-transition: .2s all linear;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+ul#emwaHelp li a:hover,
+ul#emwaHelp li a:active,
+ul#emwaHelp li a:focus,
+ul#emwaHelp li a:target {
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+ul#emwaHelp li a h3,
+ul#emwaHelp li a h4 {
+  text-decoration: none!important;
+}
+ul#emwaHelp li a h3 {
+  opacity: 1;
+}
+ul#emwaHelp li a h4 {
+  opacity: 1;
+}

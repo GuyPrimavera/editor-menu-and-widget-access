@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Editor Menu and Widget Access\n"
+"POT-Creation-Date: 2018-02-13 15:09+0000\n"
+"PO-Revision-Date: 2018-02-13 15:23+0000\n"
+"Language-Team: Guy Primavera https://guyprimavera.com/\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"Last-Translator: \n"
+"Language: en\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: options/adminbar.php:4
+msgid ""
+"Select the Adminbar items to <strong>hide from Editors and Shop Managers</"
+"strong>:"
+msgstr ""
+
+#: options/adminbar.php:5
+msgid ""
+"Please note: Some of these adminbar items are already hidden from Editors/"
+"Shop Managers, but you can select them again here to make sure."
+msgstr ""
+
+#: options/appearanceMenu.php:5
+msgid ""
+"Select the items to <strong>hide from Editors and Shop Managers</strong> "
+"throughout the admin area:"
+msgstr ""
+
+#: options/appearanceMenu.php:18
+msgid "Always hidden."
+msgstr ""
+
+#: options/appearanceMenu.php:31
+msgid "Including \"Header\" and \"Background\"."
+msgstr ""
+
+#: options/help.php:8
+msgid "View this plugin on WordPress.org"
+msgstr ""
+
+#: options/help.php:9
+msgid "See the features and recent updates."
+msgstr ""
+
+#: options/help.php:13
+msgid "View the support forum"
+msgstr ""
+
+#: options/help.php:14 options/help.php:44
+msgid "On WordPress.org."
+msgstr ""
+
+#: options/help.php:18
+msgid "Ask a question"
+msgstr ""
+
+#: options/help.php:19
+msgid "Something not working? Let me know."
+msgstr ""
+
+#: options/help.php:23
+msgid "See the ChangeLog"
+msgstr ""
+
+#: options/help.php:24
+msgid "See what's changed."
+msgstr ""
+
+#: options/help.php:28
+msgid "Translate into your language"
+msgstr ""
+
+#: options/help.php:29
+msgid "Je voudrais un sandwich."
+msgstr ""
+
+#: options/help.php:33
+msgid "View the source code on GitHub"
+msgstr ""
+
+#: options/help.php:34
+msgid "It's a hub for gits."
+msgstr ""
+
+#: options/help.php:38
+msgid "View the source code on WP Trac"
+msgstr ""
+
+#: options/help.php:39
+msgid "Similar to GitHub."
+msgstr ""
+
+#: options/help.php:43
+msgid "View the development log"
+msgstr ""
+
+#: options/help.php:48
+msgid "Previous versions"
+msgstr ""
+
+#: options/help.php:49
+msgid "Download an older version of the plugin."
+msgstr ""
+
+#: options/help.php:53
+msgid "View the plugin's web page"
+msgstr ""
+
+#: options/help.php:54
+msgid "On GuyPrimavera.com."
+msgstr ""
+
+#: options/help.php:58
+msgid "Leave a review"
+msgstr ""
+
+#: options/help.php:59
+msgid "Let me know what you think!"
+msgstr ""
+
+#: options/help.php:63
+msgid "Donate towards this plugin"
+msgstr ""
+
+#: options/help.php:64
+msgid "This full-version is free to use, but every little helps!"
+msgstr ""
+
+#: options/options.php:23
+msgid "Editor Menu and Widget Access Settings"
+msgstr ""
+
+#: options/options.php:28
+msgid "Admin Menu"
+msgstr ""
+
+#: options/options.php:29
+msgid "Admin Bar"
+msgstr ""
+
+#: options/options.php:30
+msgid "Help"
+msgstr ""
+
+#: options/otherMenus.php:5
+msgid ""
+"Select the other menus to <strong>hide from Editors and Shop Managers</"
+"strong>:"
+msgstr ""
+
+#: options/otherMenus.php:6
+msgid ""
+"Please note: Some of these menu items are already hidden from Editors/Shop "
+"Managers, but you can select them again here to make sure."
+msgstr ""
+
+#: options/registerSettings.php:18
+msgid "Hide Appearance Menus"
+msgstr ""
+
+#: options/registerSettings.php:25
+msgid "Themes"
+msgstr ""
+
+#: options/registerSettings.php:33
+msgid "Customize"
+msgstr ""
+
+#: options/registerSettings.php:41
+msgid "Widgets"
+msgstr ""
+
+#: options/registerSettings.php:49
+msgid "Menus"
+msgstr ""
+
+#: options/registerSettings.php:62
+msgid "Hide Other Menus"
+msgstr ""
+
+#: options/registerSettings.php:69
+msgid "Other Menus"
+msgstr ""
+
+#: options/registerSettings.php:81
+msgid "Hide Admin Bar Items"
+msgstr ""
+
+#: options/registerSettings.php:88
+msgid "Admin Bar Items"
+msgstr ""
+
+#: options/registerSettings.php:112
+msgid "Settings"
+msgstr ""
