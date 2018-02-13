@@ -5,7 +5,7 @@
  * Description: Allow Editors access to the Menus and Widgets areas of WordPress admin's Appearance menu, whilst hiding the theme selection page.
  * Author: Guy Primavera
  * Author URI: http://www.guyprimavera.com/
- * Version: 1.1
+ * Version: 1.1.1
  * Text Domain: editor-menu-widget-access
  * License: GPL2
  *
