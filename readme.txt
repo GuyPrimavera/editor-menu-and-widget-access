@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: widgets, widget, appearance, menus, menu, navigation, navigation menu, nav menu, admin, editor, editors, shop manager, woocommerce, users, wp-admin, theme options, options, customize, customise, wordpress, plugin
 Requires at least: 3.0.1
 Tested up to: 4.9.4
-Stable tag: 3.0
+Stable tag: 3.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -63,6 +63,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 
 == Changelog ==
 
+= 3.0.1 =
+* CSS tweak for admin checkboxes.
+
 = 3.0 =
 * Added Admin Bar support for removing adminbar nodes/menus.
 * Tabbed options page and redesign.
@@ -117,6 +120,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 * Beta release.
 
 == Upgrade Notice ==
+
+= 3.0.1 =
+Minor admin area styling fix.
 
 = 3.0 =
 You can now remove adminbar menus and elements!

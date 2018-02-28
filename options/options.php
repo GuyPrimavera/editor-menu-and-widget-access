@@ -7,17 +7,15 @@ include('otherMenus.php');
 include('adminbar.php');
 include('help.php');
 
-function guyPrimavera_load_style() {
-    wp_register_style( 'emwa', plugins_url( 'editor-menu-and-widget-access/options/emwa.css' ) );
-    wp_enqueue_style( 'emwa' );
-}
-add_action( 'admin_enqueue_scripts', 'guyPrimavera_load_style' );
 
 /// Display the options page
 
 function emwa_options_page(  ) { 
 
 	?>
+
+<style><?php include 'emwa.css'; ?></style>
+
 	<div class="wrap">
 
     <h2><?php echo __( 'Editor Menu and Widget Access Settings', 'editor-menu-and-widget-access' ); ?></h2>

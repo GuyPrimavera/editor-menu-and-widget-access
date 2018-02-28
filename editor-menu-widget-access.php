@@ -5,7 +5,7 @@
  * Description: Allow and control Editors' access to the Menus, Widgets and Customize areas of the Appearance menu. You can also hide custom theme options.
  * Author: Guy Primavera
  * Author URI: https://guyprimavera.com/
- * Version: 3.0
+ * Version: 3.0.1
  * Text Domain: editor-menu-and-widget-access
  * Domain Path: /lang
  * License: GPL3
