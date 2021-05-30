@@ -1,45 +1,50 @@
-<?php if ( __FILE__ == $_SERVER['SCRIPT_FILENAME'] ) { exit; }
+<?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { exit; }
 
-$emwaOptions = get_option( 'emwa_settings' );
-
-// Allow Editors access to the Appearance menu
-function emwa_add_cap( $caps ) {
-
-	if( ! empty( $caps[ 'edit_pages' ] ) ) {
-		$caps[ 'edit_theme_options' ] = true;
-	}
-	return $caps;
-	
+function emwa_reset_caps() {
+  get_role('editor') -> remove_cap('edit_theme_options');
+  get_role('shop_manager') -> remove_cap('edit_theme_options');
 }
-add_filter( 'user_has_cap', 'emwa_add_cap' );
+register_deactivation_hook(__FILE__, 'emwa_reset_caps');
 
 // Remove access to Themes page.
 function emwa_set_capabilities() {
+  $userRoles = get_option('emwa_roles');
 
-    $editor = get_role( 'editor' );
-    $shopMan = get_role( 'shop_manager' );
+  $caps = array(
+    'edit_themes',
+    'update_themes',
+    'delete_themes',
+    'install_themes',
+    'upload_themes'
+  );
 
-    $caps = array(
-        'edit_themes',
-        'update_themes',
-        'delete_themes',
-        'install_themes',
-        'upload_themes'
-    );
+  if (!empty($userRoles)) {
+    foreach ($userRoles as $role_key => $role_name) {
+      $role = get_role($role_key);
 
-    foreach ( $caps as $cap ) {
-    
-        // Remove the capability.
-        if( !empty( $editor ) ) {
-            $editor->remove_cap( $cap );
-        }
-
-        if( !empty( $shopMan ) ) {
-            $shopMan->remove_cap( $cap );
-        }
-
+      if ($role_key === 'editor' || $role_key === 'shop_manager') {
+        $role->add_cap('edit_theme_options');
+      }
+      
+      foreach ($caps as $cap) {
+        $role -> remove_cap($cap);
+      }
     }
-}
-add_action( 'init', 'emwa_set_capabilities' );
+  } else {
+    $editor = get_role('editor');
+    $shopMan = get_role('shop_manager');
+    $editor -> add_cap('edit_theme_options');
+    $shopMan -> add_cap('edit_theme_options');
 
-?>
+    foreach ($caps as $cap) {
+      if (!empty($editor)) {
+        $editor -> remove_cap($cap);
+      }
+
+      if (!empty($shopMan)) {
+        $shopMan -> remove_cap($cap);
+      }
+    }
+  }
+}
+add_action('init', 'emwa_set_capabilities');

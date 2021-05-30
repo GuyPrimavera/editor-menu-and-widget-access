@@ -1,8 +1,8 @@
 .trans {
-  transition: .2s all linear;
-  -webkit-transition: .2s all linear;
-  -moz-transition: .2s all linear;
-  -o-transition: .2s all linear;
+  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
 }
 .mdShadow {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -30,18 +30,18 @@ ol.emwaGroupParent .emwaListParent {
   padding: 10px;
 }
 ol.emwaGroupParent .emwaListParent input {
-  transition: .2s all linear;
-  -webkit-transition: .2s all linear;
-  -moz-transition: .2s all linear;
-  -o-transition: .2s all linear;
+  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
 }
 ol.emwaGroupParent .emwaListParent input ol,
 ol.emwaGroupParent .emwaListParent input span,
 ol.emwaGroupParent .emwaListParent input li {
-  transition: .2s all linear;
-  -webkit-transition: .2s all linear;
-  -moz-transition: .2s all linear;
-  -o-transition: .2s all linear;
+  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
 }
 ol.emwaGroupParent .emwaListParent input:checked ~ ol {
   height: 0px;
@@ -73,18 +73,18 @@ ol.emwaGroupParent .emwaListParent .emwaGroupChild .emwaListChild {
   opacity: 1;
 }
 .emwaGroupAdminbar input {
-  transition: .2s all linear;
-  -webkit-transition: .2s all linear;
-  -moz-transition: .2s all linear;
-  -o-transition: .2s all linear;
+  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
 }
 .emwaGroupAdminbar input ol,
 .emwaGroupAdminbar input li,
 .emwaGroupAdminbar input span {
-  transition: .2s all linear;
-  -webkit-transition: .2s all linear;
-  -moz-transition: .2s all linear;
-  -o-transition: .2s all linear;
+  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
 }
 .emwaGroupAdminbar input:checked ~ ol {
   display: none;
@@ -116,10 +116,10 @@ ul#emwaHelp li a {
   padding: 20px;
   text-align: center;
   width: 100%;
-  transition: .2s all linear;
-  -webkit-transition: .2s all linear;
-  -moz-transition: .2s all linear;
-  -o-transition: .2s all linear;
+  transition: 0.2s all linear;
+  -webkit-transition: 0.2s all linear;
+  -moz-transition: 0.2s all linear;
+  -o-transition: 0.2s all linear;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -132,7 +132,7 @@ ul#emwaHelp li a:target {
 }
 ul#emwaHelp li a h3,
 ul#emwaHelp li a h4 {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 ul#emwaHelp li a h3 {
   opacity: 1;
