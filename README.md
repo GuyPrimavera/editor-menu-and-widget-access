@@ -1,5 +1,5 @@
 # Editor Menu and Widget Access
-* Contributors: GuyPrimavera, designbymito
+* Contributors: GuyPrimavera
 * Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YVPWSJB4SPN5N
 
 Allow and control Editors' access to the Menus, Widgets and Customize areas of the Appearance menu. You can also hide custom theme options.
