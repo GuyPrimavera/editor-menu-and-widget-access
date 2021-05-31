@@ -4,12 +4,19 @@ function emwa_set_role_string() {
   global $wp_roles;
   $userRoles = get_option('emwa_roles');
   $roleString = get_option('emwa_role_string');
+  $shopMan = get_role('shop_manager');
 
   if (empty($userRoles)) {
-    $userRoles = array (
-      'editor' => 1,
-      'shop_manager' => 1
-    );
+    if (!empty($shopMan)) {
+      $userRoles = array (
+        'editor' => 1,
+        'shop_manager' => 1
+      );
+    } else {
+      $userRoles = array (
+        'editor' => 1
+      );
+    }
   }
 
   if (!empty($userRoles)) {
