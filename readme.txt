@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: widgets, widget, appearance, menus, menu, navigation, navigation menu, nav menu, admin, editor, editors, shop manager, woocommerce, users, wp-admin, theme options, options, customize, customise, wordpress, plugin
 Requires at least: 3.0.1
 Tested up to: 5.7
-Stable tag: 3.1
+Stable tag: 3.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 5. The "Widgets" page being modified by an Editor.
 
 == Changelog ==
+
+= 3.1.1 =
+* Bug fixed for WooCommerce shop_manager role.
 
 = 3.1 =
 * Code refactor.
@@ -129,6 +132,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 * Beta release.
 
 == Upgrade Notice ==
+
+= 3.1.1 =
+* Bug fixed for WooCommerce shop_manager role.
 
 = 3.1 =
 Code refactor and bug fixes.

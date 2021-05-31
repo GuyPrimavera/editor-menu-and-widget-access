@@ -34,7 +34,9 @@ function emwa_set_capabilities() {
     $editor = get_role('editor');
     $shopMan = get_role('shop_manager');
     $editor -> add_cap('edit_theme_options');
-    $shopMan -> add_cap('edit_theme_options');
+    if (!empty($shopMan)) {
+      $shopMan -> add_cap('edit_theme_options');
+    }
 
     foreach ($caps as $cap) {
       if (!empty($editor)) {
