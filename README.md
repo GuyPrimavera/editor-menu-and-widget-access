@@ -2,8 +2,7 @@
 * Contributors: GuyPrimavera
 * Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YVPWSJB4SPN5N
 
-Allow and control Editors' access to the Menus, Widgets and Customize areas of the Appearance menu. You can also hide custom theme options.
-
+Allow and control Editor and Shop Manager access to the menus, widgets and appearance menu, plus other menus and adminbar items.
 ## Description
 
 This open source and lightweight plugin allows users with the role **Editor** or **Shop Manager** to access the **Menus** and **Widgets** areas of the Appearance menu in WordPress' admin area. 

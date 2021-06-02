@@ -4,11 +4,11 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: widgets, widget, appearance, menus, menu, navigation, navigation menu, nav menu, admin, editor, editors, shop manager, woocommerce, users, wp-admin, theme options, options, customize, customise, wordpress, plugin
 Requires at least: 3.0.1
 Tested up to: 5.7
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Allow and control Editors' access to the WordPress Appearance menu, and hide other menus and admin bar items.
+Allow and control Editor and Shop Manager access to the menus, widgets and appearance menu, plus other menus and adminbar items.
 
 == Description ==
 
@@ -18,7 +18,7 @@ This is a common task that would be useful for clients to manage themselves to g
 
 This plugin also gives access to the **Customize** submenu and other theme options, but these can be hidden through the options page at **Appearance > Editor Access** if you wish.
 
-You can now select other menus to hide from Editors and Shop Managers (e.g. Custom theme or plugin options pages), as well as hiding **any elements on the Admin Bar**.
+You can also select other menus to hide from Editors and Shop Managers (e.g. custom theme or plugin options pages), as well as hiding **any elements on the Admin Bar**.
 
 **Features**
 
@@ -62,6 +62,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 5. The "Widgets" page being modified by an Editor.
 
 == Changelog ==
+
+= 3.1.2 =
+* Capabilities now reset on plugin deactivation.
 
 = 3.1.1 =
 * Bug fixed for WooCommerce shop_manager role.
@@ -132,6 +135,9 @@ Yes. Go to **Appearance > Editor Access** and select any other menu items that y
 * Beta release.
 
 == Upgrade Notice ==
+
+= 3.1.2 =
+* Capabilities now reset on plugin deactivation.
 
 = 3.1.1 =
 * Bug fixed for WooCommerce shop_manager role.

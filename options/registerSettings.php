@@ -125,5 +125,15 @@ function emwa_settings_init() {
 // Add Settings link to Plugins page
 function emwa_action_links($links) {
   $emwa_links[] = '<a href="' . esc_url(get_admin_url(null, 'themes.php?page=editorMenuWidgetAccess')) . '">' . __('Settings', 'editor-menu-and-widget-access') . '</a>';
+
   return array_merge($emwa_links, $links);
+}
+
+function emwa_row_meta($links, $file) {
+  if ($file == plugin_basename(dirname(EMWA_PLUGIN_FULL_PATH) .'/'.EMWA_PLUGIN_FILE)) {
+    $links[] = '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YVPWSJB4SPN5N" target="_blank">' . __('Donate', 'editor-menu-and-widget-access') . '</a>';
+    $links[] = '<a href="https://wordpress.org/plugins/editor-menu-and-widget-access/#developers" target="_blank">' . __('Changelog', 'editor-menu-and-widget-access') . '</a>';
+  }
+
+  return $links;
 }
