@@ -1,11 +1,5 @@
 <?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { exit; }
 
-function emwa_reset_caps() {
-  get_role('editor') -> remove_cap('edit_theme_options');
-  get_role('shop_manager') -> remove_cap('edit_theme_options');
-}
-register_deactivation_hook(__FILE__, 'emwa_reset_caps');
-
 // Remove access to Themes page.
 function emwa_set_capabilities() {
   $userRoles = get_option('emwa_roles');
@@ -34,6 +28,7 @@ function emwa_set_capabilities() {
     $editor = get_role('editor');
     $shopMan = get_role('shop_manager');
     $editor -> add_cap('edit_theme_options');
+    
     if (!empty($shopMan)) {
       $shopMan -> add_cap('edit_theme_options');
     }
