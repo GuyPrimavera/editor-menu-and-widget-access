@@ -13,7 +13,6 @@ FILES = (
     "editor-menu-widget-access.php",
     "editor-menu-and-widget-access.php",
     "uninstall.php",
-    "screenshot-1.png",
     "assets/admin/settings.css",
     "assets/admin/settings.js",
     "assets/admin/site-editor.css",
