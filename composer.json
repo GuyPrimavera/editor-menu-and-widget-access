@@ -1,0 +1,24 @@
+{
+  "name": "guyprimavera/editor-menu-and-widget-access",
+  "description": "WordPress role access and admin visibility controls.",
+  "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "require": {
+    "php": ">=7.4"
+  },
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.2",
+    "phpcompatibility/phpcompatibility-wp": "^2.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "scripts": {
+    "lint": "phpcs",
+    "format": "phpcbf",
+    "compatibility": "phpcs --standard=PHPCompatibilityWP --runtime-set testVersion 7.4- --extensions=php includes templates editor-menu-widget-access.php editor-menu-and-widget-access.php uninstall.php"
+  }
+}
