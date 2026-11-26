@@ -1,0 +1,221 @@
+name: Compatibility
+on: [push, pull_request]
+permissions: { contents: read }
+
+jobs:
+  standards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: '8.3', tools: 'composer, wp-cli' }
+      - run: composer install --no-interaction --prefer-dist
+      - run: composer lint
+      - run: composer compatibility
+      - run: node --check assets/admin/settings.js
+      - run: node --check tests/browser.cjs
+      - run: node --check tests/site-editor.cjs
+      - run: node --check tests/localisation.cjs
+      - name: Check translation extraction and compiled Italian catalogs
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y gettext
+          python3 bin/make-pot.py --output=/tmp/emwa-current.pot
+          msgcmp --use-untranslated messages.pot /tmp/emwa-current.pot
+          msgcmp --use-untranslated /tmp/emwa-current.pot messages.pot
+          for locale in it it_IT; do
+            ! msgattrib --untranslated --no-obsolete "lang/$locale.po" | grep -q '^msgid '
+            ! msgattrib --only-fuzzy --no-obsolete "lang/$locale.po" | grep -q '^msgid '
+            msgfmt --check --check-format -o "/tmp/emwa-$locale.mo" "lang/$locale.po"
+            cmp "/tmp/emwa-$locale.mo" "lang/editor-menu-and-widget-access-$locale.mo"
+          done
+      - run: python3 bin/build-release.py
+
+  wordpress:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { php: '7.4', wordpress: '6.2', multisite: false }
+          - { php: '8.3', wordpress: 'latest', multisite: false }
+          - { php: '8.5', wordpress: 'latest', multisite: false }
+          - { php: '8.3', wordpress: 'latest', multisite: true }
+    services:
+      mysql:
+        image: mysql:8.0
+        env: { MYSQL_ROOT_PASSWORD: root, MYSQL_DATABASE: emwa_test }
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -proot"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: '${{ matrix.php }}', tools: wp-cli }
+      - name: Install disposable WordPress
+        env: { WP_VERSION: '${{ matrix.wordpress }}' }
+        run: |
+          wp core download --path=/tmp/emwa-wp --version="$WP_VERSION"
+          wp config create --path=/tmp/emwa-wp --dbname=emwa_test --dbuser=root --dbpass=root --dbhost=127.0.0.1
+          wp core install --path=/tmp/emwa-wp --url=http://emwa.test --title=EMWA --admin_user=admin --admin_password=test-only --admin_email=admin@example.test --skip-email
+          ln -s "$GITHUB_WORKSPACE" /tmp/emwa-wp/wp-content/plugins/editor-menu-and-widget-access
+          wp language core install it_IT --path=/tmp/emwa-wp
+      - if: matrix.multisite
+        run: |
+          wp core multisite-convert --path=/tmp/emwa-wp --title=EMWA --base=/
+          wp plugin activate editor-menu-and-widget-access --path=/tmp/emwa-wp --network
+      - name: Run integration regressions
+        env: { EMWA_TEST_SITE: '1' }
+        run: |
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/integration.php" --skip-plugins --skip-themes
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/role-permissions.php" --skip-plugins --skip-themes
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/profile-preview.php" --skip-plugins --skip-themes
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/defaults.php" --skip-plugins --skip-themes
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/menu-availability.php" --skip-plugins --skip-themes
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/audit.php" --skip-plugins --skip-themes
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/localisation.php" --skip-plugins --skip-themes
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/bootstrap-collisions.php" --skip-plugins --skip-themes
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/namespace-collision.php" --skip-plugins --skip-themes
+          EMWA_COLLISION_KIND=interface wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/namespace-collision.php" --skip-plugins --skip-themes
+          EMWA_COLLISION_KIND=trait wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/namespace-collision.php" --skip-plugins --skip-themes
+          EMWA_COLLISION_KIND=constant wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/namespace-collision.php" --skip-plugins --skip-themes
+      - if: ${{ ! matrix.multisite }}
+        name: Test real activation and deactivation requests
+        env: { EMWA_TEST_SITE: '1' }
+        run: bash "$GITHUB_WORKSPACE/tests/activation-lifecycle.sh" /tmp/emwa-wp
+      - if: matrix.multisite
+        name: Run network isolation regressions
+        env: { EMWA_TEST_SITE: '1' }
+        run: |
+          wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/multisite.php"
+          EMWA_TEST_SITE=1 wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/network-audit.php"
+
+
+  woocommerce:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env: { MYSQL_ROOT_PASSWORD: root, MYSQL_DATABASE: emwa_test }
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -proot"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: '8.3', tools: wp-cli }
+      - name: Install test site and WooCommerce
+        run: |
+          wp core download --path=/tmp/emwa-wp
+          wp config create --path=/tmp/emwa-wp --dbname=emwa_test --dbuser=root --dbpass=root --dbhost=127.0.0.1
+          wp core install --path=/tmp/emwa-wp --url=http://emwa.test --title=EMWA --admin_user=admin --admin_password=test-only --admin_email=admin@example.test --skip-email
+          ln -s "$GITHUB_WORKSPACE" /tmp/emwa-wp/wp-content/plugins/editor-menu-and-widget-access
+          wp plugin activate editor-menu-and-widget-access --path=/tmp/emwa-wp
+          wp plugin install woocommerce --activate --path=/tmp/emwa-wp
+      - name: Test WooCommerce and HPOS
+        env: { EMWA_TEST_SITE: '1' }
+        run: wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/woocommerce.php"
+      - name: Check production package
+        run: |
+          python3 bin/build-release.py --output=/tmp/emwa-release.zip
+          rm /tmp/emwa-wp/wp-content/plugins/editor-menu-and-widget-access
+          unzip -q /tmp/emwa-release.zip -d /tmp/emwa-wp/wp-content/plugins
+          wp plugin install plugin-check --activate --path=/tmp/emwa-wp
+          wp plugin check editor-menu-and-widget-access --path=/tmp/emwa-wp --format=table | tee /tmp/emwa-plugin-check.txt
+          ! grep -Eq $'\t(ERROR|WARNING)\t' /tmp/emwa-plugin-check.txt
+      - name: Test packaged WooCommerce integration
+        env: { EMWA_TEST_SITE: '1' }
+        run: wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/woocommerce.php"
+
+
+  popular-plugins:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - group: content
+            plugins: 'elementor contact-form-7 wordpress-seo classic-editor woocommerce'
+          - group: roles
+            plugins: 'members user-role-editor admin-menu-editor advanced-custom-fields classic-widgets polylang'
+    services:
+      mysql:
+        image: mysql:8.0
+        env: { MYSQL_ROOT_PASSWORD: root, MYSQL_DATABASE: emwa_test }
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -proot"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: '8.3', tools: wp-cli }
+      - name: Install production package on a disposable site
+        run: |
+          wp core download --path=/tmp/emwa-wp
+          wp config create --path=/tmp/emwa-wp --dbname=emwa_test --dbuser=root --dbpass=root --dbhost=127.0.0.1
+          wp core install --path=/tmp/emwa-wp --url=http://emwa.test --title=EMWA --admin_user=emwa-test-admin --admin_password=test-only --admin_email=admin@example.test --skip-email
+          python3 bin/build-release.py --output=/tmp/emwa-release.zip
+          wp plugin install /tmp/emwa-release.zip --activate --path=/tmp/emwa-wp
+          wp user create emwa-browser-editor editor@example.test --role=editor --user_pass=test-only --path=/tmp/emwa-wp
+      - name: Activate common plugin combination and check role policy
+        env:
+          EMWA_TEST_SITE: '1'
+          PLUGIN_SLUGS: ${{ matrix.plugins }}
+        run: |
+          for plugin in $PLUGIN_SLUGS; do
+            wp plugin install "$plugin" --activate --path=/tmp/emwa-wp
+          done
+          for plugin in $PLUGIN_SLUGS; do
+            EMWA_SMOKE_PLUGIN="$plugin" wp --path=/tmp/emwa-wp eval-file "$GITHUB_WORKSPACE/tests/popular-smoke.php"
+          done
+
+  browser:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env: { MYSQL_ROOT_PASSWORD: root, MYSQL_DATABASE: emwa_test }
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="mysqladmin ping -proot"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with: { php-version: '8.3', tools: wp-cli }
+      - uses: actions/setup-node@v4
+        with: { node-version: '24', cache: npm }
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Install disposable browser site
+        run: |
+          wp core download --path=/tmp/emwa-wp
+          wp config create --path=/tmp/emwa-wp --dbname=emwa_test --dbuser=root --dbpass=root --dbhost=127.0.0.1
+          wp core install --path=/tmp/emwa-wp --url=http://127.0.0.1:8999 --title=EMWA --admin_user=emwa-test-admin --admin_password=emwa-local-test-only --admin_email=admin@example.test --skip-email
+          ln -s "$GITHUB_WORKSPACE" /tmp/emwa-wp/wp-content/plugins/editor-menu-and-widget-access
+          mkdir -p /tmp/emwa-wp/wp-content/mu-plugins
+          cp tests/fixtures/menus.php /tmp/emwa-wp/wp-content/mu-plugins/emwa-fixtures.php
+          cp tests/fixtures/localisation.php /tmp/emwa-wp/wp-content/mu-plugins/emwa-localisation.php
+          wp language core install it_IT ar tr_TR --path=/tmp/emwa-wp
+          wp plugin activate editor-menu-and-widget-access --path=/tmp/emwa-wp
+          wp cap add editor edit_theme_options --path=/tmp/emwa-wp
+          wp user create emwa-browser-editor editor@example.test --role=editor --user_pass=emwa-editor-test-only --path=/tmp/emwa-wp
+      - name: Run admin browser regressions
+        env:
+          EMWA_TEST_SITE: '1'
+          EMWA_TEST_URL: http://127.0.0.1:8999
+          EMWA_TEST_USER: emwa-test-admin
+          EMWA_TEST_PASSWORD: emwa-local-test-only
+        run: |
+          php -S 127.0.0.1:8999 -t /tmp/emwa-wp >/tmp/emwa-php.log 2>&1 &
+          server=$!
+          trap 'kill "$server"' EXIT
+          npm run test:browser
+          wp theme install twentytwentyfive --activate --path=/tmp/emwa-wp
+          npm run test:site-editor
+          EMWA_TEST_PATH=/tmp/emwa-wp node tests/localisation.cjs
+      - if: failure()
+        uses: actions/upload-artifact@v4
+        with: { name: browser-artifacts, path: tests/artifacts, if-no-files-found: ignore }

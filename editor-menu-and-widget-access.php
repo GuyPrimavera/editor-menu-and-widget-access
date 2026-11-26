@@ -1,2 +1,4 @@
-<?php if (__FILE__ == $_SERVER['SCRIPT_FILENAME']) { exit; }
-include('editor-menu-widget-access.php');
+<?php
+/** Compatibility loader for historical installations. @package EditorMenuWidgetAccess */
+defined( 'ABSPATH' ) || exit;
+require_once __DIR__ . '/editor-menu-widget-access.php';

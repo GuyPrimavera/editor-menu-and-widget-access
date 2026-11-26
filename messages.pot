@@ -1,200 +1,874 @@
+# Copyright (C) 2026 Guy Primavera
+# This file is distributed under the GPL-3.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Editor menu and widget access\n"
-"POT-Creation-Date: 2021-05-30 12:16+0200\n"
-"PO-Revision-Date: 2021-05-30 12:17+0200\n"
-"Last-Translator: \n"
-"Language-Team: GuyPrimavera\n"
-"Language: en_GB\n"
+"Project-Id-Version: Editor Menu and Widget Access 4.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/editor-menu-and-widget-access\n"
+"Last-Translator: Guy Primavera <guy@guyprimavera.com>\n"
+"Language-Team: Guy Primavera <guy@guyprimavera.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.3\n"
-"X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __\n"
-"X-Poedit-SearchPath-0: .\n"
+"POT-Creation-Date: 2026-11-25 18:22+0000\n"
+"PO-Revision-Date: 2026-11-25 18:22+0000\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: editor-menu-and-widget-access\n"
 
-#: options/adminbar.php:6
-msgid "Select the Adminbar items to <strong>hide</strong> from the <strong>"
+#. Plugin Name of the plugin
+#: editor-menu-widget-access.php
+msgid "Editor Menu and Widget Access"
 msgstr ""
 
-#: options/adminbar.php:7
-msgid "Please note: Some of these adminbar items are already hidden from the "
+#. Plugin URI of the plugin
+#: editor-menu-widget-access.php
+msgid "https://wordpress.org/plugins/editor-menu-and-widget-access/"
 msgstr ""
 
-#: options/appearanceMenu.php:7
-msgid "Select the items to <strong>hide</strong> from the <strong>"
+#. Description of the plugin
+#: editor-menu-widget-access.php
+msgid "Give selected roles appearance access and simplify their admin menus and toolbar."
 msgstr ""
 
-#: options/appearanceMenu.php:22
-msgid "Always hidden."
+#. Author of the plugin
+#: editor-menu-widget-access.php
+msgid "Guy Primavera"
 msgstr ""
 
-#: options/appearanceMenu.php:37
-msgid "Including \"Header\" and \"Background\"."
+#. Author URI of the plugin
+#: editor-menu-widget-access.php
+msgid "https://guyprimavera.com/"
 msgstr ""
 
-#: options/help.php:8
-msgid "View this plugin on WordPress.org"
+#: editor-menu-widget-access.php:54
+#: editor-menu-widget-access.php:61
+msgid "Editor Access could not load because another plugin uses its namespace. Check for duplicate copies of Editor Menu and Widget Access."
 msgstr ""
 
-#: options/help.php:9
-msgid "See the features and recent updates."
+#: includes/Admin/Catalog.php:122
+msgid "Edit content (frontend toolbar)"
 msgstr ""
 
-#: options/help.php:13
-msgid "View the support forum"
+#: includes/Admin/SettingsActions.php:13
+#: includes/Admin/SettingsPage.php:76
+msgid "You do not have permission to manage Editor Access."
 msgstr ""
 
-#: options/help.php:14 options/help.php:44
-msgid "On WordPress.org."
+#: includes/Admin/SettingsActions.php:24
+msgid "The form was truncated or incomplete. Reload before saving. Existing settings were preserved."
 msgstr ""
 
-#: options/help.php:18
-msgid "Ask a question"
+#: includes/Admin/SettingsActions.php:31
+msgid "The selected backup is unavailable."
 msgstr ""
 
-#: options/help.php:19
-msgid "Something not working? Let me know."
+#: includes/Admin/SettingsActions.php:49
+msgid "Settings saved. Previous settings are available in Help."
 msgstr ""
 
-#: options/help.php:23
-msgid "See the ChangeLog"
+#: includes/Admin/SettingsActions.php:60
+msgid "You do not have permission to edit role capabilities."
 msgstr ""
 
-#: options/help.php:24
-msgid "See what's changed."
+#: includes/Admin/SettingsActions.php:71
+msgid "The permission-reset form was incomplete. Nothing was changed."
 msgstr ""
 
-#: options/help.php:28
-msgid "Translate into your language"
+#: includes/Admin/SettingsActions.php:72
+msgid "This role’s Appearance permission was reset to the WordPress default. This plugin’s grant and Customizer restriction are off for the role."
 msgstr ""
 
-#: options/help.php:29
-msgid "Je voudrais un sandwich."
+#: includes/Admin/SettingsActions.php:72
+msgid "This plugin’s grant and Customizer restriction are off for the role. Stored permissions owned by WooCommerce or other plugins were preserved."
 msgstr ""
 
-#: options/help.php:33
-msgid "View the source code on GitHub"
+#: includes/Admin/SettingsActions.php:100
+msgid "The profile-copy form was incomplete. Nothing was changed."
 msgstr ""
 
-#: options/help.php:34
-msgid "It's a hub for gits."
+#: includes/Admin/SettingsActions.php:105
+msgid "Profile copied. The target role’s previous settings are available in Help & Backups."
 msgstr ""
 
-#: options/help.php:38
-msgid "View the source code on WP Trac"
+#: includes/Admin/SettingsActions.php:126
+msgid "You do not have permission to view role capability backups."
 msgstr ""
 
-#: options/help.php:39
-msgid "Similar to GitHub."
+#: includes/Admin/SettingsActions.php:131
+msgid "Role capability backup data is invalid."
 msgstr ""
 
-#: options/help.php:43
-msgid "View the development log"
+#: includes/Admin/SettingsForm.php:37
+msgid "The form is incomplete or invalid. Reload the page; settings were not changed."
 msgstr ""
 
-#: options/help.php:48
-msgid "Previous versions"
+#: includes/Admin/SettingsForm.php:41
+msgid "Invalid form details."
 msgstr ""
 
-#: options/help.php:49
-msgid "Download an older version of the plugin."
+#: includes/Admin/SettingsForm.php:51
+msgid "Select an existing role profile before saving."
 msgstr ""
 
-#: options/help.php:53
-msgid "View the plugin's web page"
+#: includes/Admin/SettingsForm.php:59
+msgid "Invalid role selection."
 msgstr ""
 
-#: options/help.php:54
-msgid "On GuyPrimavera.com."
+#: includes/Admin/SettingsForm.php:83
+#: includes/Admin/SettingsForm.php:106
+msgid "Invalid appearance selection."
 msgstr ""
 
-#: options/help.php:58
-msgid "Leave a review"
+#: includes/Admin/SettingsForm.php:92
+msgid "Invalid visibility selection."
 msgstr ""
 
-#: options/help.php:59
-msgid "Let me know what you think!"
+#: includes/Admin/SettingsForm.php:130
+msgid "Invalid toolbar scope."
 msgstr ""
 
-#: options/help.php:63
-msgid "Donate towards this plugin"
+#: includes/Admin/SettingsForm.php:136
+msgid "Invalid settings action."
 msgstr ""
 
-#: options/help.php:64
-msgid "This full-version is free to use, but every little helps!"
+#: includes/Admin/SettingsPage.php:26
+#: includes/Admin/SettingsPage.php:28
+#: templates/admin/settings.php:8
+msgid "Editor Access"
 msgstr ""
 
-#: options/options.php:20
-msgid "Editor Menu and Widget Access Settings"
-msgstr ""
-
-#: options/options.php:26
-msgid "Admin Menu"
-msgstr ""
-
-#: options/options.php:27
-msgid "Admin Bar"
-msgstr ""
-
-#: options/options.php:28
-msgid "Help"
-msgstr ""
-
-#: options/otherMenus.php:7
-msgid "Select the other menus to <strong>hide</strong> from the <strong>"
-msgstr ""
-
-#: options/otherMenus.php:8
-msgid "Please note: Some of these menu items are already hidden from the "
-msgstr ""
-
-#: options/registerSettings.php:17
-msgid "Hide Appearance Menus"
-msgstr ""
-
-#: options/registerSettings.php:24
-msgid "Themes"
-msgstr ""
-
-#: options/registerSettings.php:32
-msgid "Customize"
-msgstr ""
-
-#: options/registerSettings.php:40
-msgid "Widgets"
-msgstr ""
-
-#: options/registerSettings.php:48
-msgid "Menus"
-msgstr ""
-
-#: options/registerSettings.php:61
-msgid "Hide Other Menus"
-msgstr ""
-
-#: options/registerSettings.php:68
-msgid "Other Menus"
-msgstr ""
-
-#: options/registerSettings.php:80
-msgid "Hide Admin Bar Items"
-msgstr ""
-
-#: options/registerSettings.php:87
-msgid "Admin Bar Items"
-msgstr ""
-
-#: options/registerSettings.php:127
+#: includes/Admin/SettingsPage.php:33
 msgid "Settings"
 msgstr ""
 
-#: options/userRoles.php:4
-msgid "Select the user roles to <strong>hide menus and other items</strong> from:"
+#: includes/Admin/SettingsPage.php:60
+msgid "You have unsaved changes."
 msgstr ""
 
-#: options/userRoles.php:5
-msgid "Default: <strong>Editor</strong> and <strong>Shop Manager</strong>"
+#: includes/Admin/SettingsPage.php:61
+msgid "Reset this role’s settings on the current tab? Selected roles and other tabs stay the same. A backup will be saved first."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:62
+msgid "Restore this saved configuration? Your current settings will be backed up first."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:63
+msgid "Reset Appearance permissions for this role? Built-in WordPress roles will lose any stored edit_theme_options grant. A backup is saved first."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:64
+msgid "Copy the reviewed profile to this role? Its existing profile will be backed up first."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:65
+msgid "Copied."
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:66
+msgid "Expand"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:67
+#: templates/admin/visibility.php:102
+msgid "Collapse"
+msgstr ""
+
+#. translators: 1: localized number of displayed items, 2: localized total number of items.
+#: includes/Admin/SettingsPage.php:69
+#, php-format
+msgid "%1$s / %2$s"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:161
+msgid "Entire Appearance menu"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:162
+msgid "Themes"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:163
+msgid "Customize, Header and Background"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:164
+msgid "Widgets"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:165
+msgid "Menus / Navigation"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:166
+msgid "Site Editor / Design"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:167
+msgid "Identity"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:168
+msgid "Styles"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:169
+msgid "Patterns"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:170
+msgid "Templates"
+msgstr ""
+
+#: includes/Admin/SettingsPage.php:171
+msgid "Font Library"
+msgstr ""
+
+#: includes/Migrations.php:11
+#: includes/RolePermissions.php:51
+msgid "Editor Access settings could not be initialized safely. Existing settings and role permissions were preserved."
+msgstr ""
+
+#: includes/ProfileCopy.php:10
+msgid "Choose two different available roles."
+msgstr ""
+
+#: includes/ProfileCopy.php:15
+msgid "A role is unavailable or has administrator permissions."
+msgstr ""
+
+#: includes/ProfileCopy.php:19
+msgid "Settings changed since this review opened. Reload and review the copy again; nothing was changed."
+msgstr ""
+
+#: includes/RolePermissions.php:27
+msgid "Role permission backup storage is invalid. No permissions were changed."
+msgstr ""
+
+#: includes/RolePermissions.php:42
+msgid "The role permission backup could not be saved. No permissions were changed."
+msgstr ""
+
+#: includes/RolePermissions.php:56
+#: includes/RolePermissions.php:89
+#: includes/RolePermissions.php:176
+msgid "Role permissions changed or could not be saved. No concurrent changes were overwritten. Reload and retry; a backup is available."
+msgstr ""
+
+#: includes/RolePermissions.php:163
+msgid "Select an available non-administrator role."
+msgstr ""
+
+#: includes/RolePermissions.php:167
+msgid "This role is unavailable or has administrator permissions."
+msgstr ""
+
+#: includes/RolePermissions.php:171
+msgid "Settings or role permissions changed since this page opened. Reload before resetting; nothing was changed."
+msgstr ""
+
+#: includes/RolePermissions.php:199
+msgid "The plugin grant was disabled, but the stored role permission could not be removed. A backup is available; retry after checking role-management plugins."
+msgstr ""
+
+#: includes/Settings.php:139
+msgid "Settings are malformed or use an unsupported version. Existing data has been preserved."
+msgstr ""
+
+#: includes/Settings.php:142
+msgid "Settings exceed the supported size."
+msgstr ""
+
+#: includes/Settings.php:146
+msgid "Every selected role must have a valid profile."
+msgstr ""
+
+#: includes/Settings.php:152
+#: includes/Settings.php:155
+msgid "Invalid role profile."
+msgstr ""
+
+#: includes/Settings.php:159
+msgid "Invalid appearance rule."
+msgstr ""
+
+#: includes/Settings.php:163
+msgid "Too many visibility rules."
+msgstr ""
+
+#: includes/Settings.php:167
+msgid "Invalid menu rule."
+msgstr ""
+
+#: includes/Settings.php:172
+msgid "Invalid toolbar rule."
+msgstr ""
+
+#: includes/Settings.php:213
+msgid "The settings backup is unreadable. No settings were changed."
+msgstr ""
+
+#: includes/Settings.php:222
+msgid "Could not save a backup. No settings were changed."
+msgstr ""
+
+#: includes/Settings.php:236
+msgid "Settings changed since this page was opened, or cannot be safely edited. Reload before trying again. No settings were changed."
+msgstr ""
+
+#: includes/Settings.php:251
+msgid "Another save won the race or the database rejected this save. Reload the settings page. Your previous settings are preserved."
+msgstr ""
+
+#: includes/Settings.php:261
+msgid "Import must be JSON smaller than 1 MB."
+msgstr ""
+
+#: includes/Settings.php:265
+msgid "This is not a supported Editor Access settings export."
+msgstr ""
+
+#: templates/admin/access-preview.php:7
+#: templates/admin/profile-copy.php:37
+#: templates/admin/settings.php:19
+#: templates/admin/settings.php:21
+msgid "Yes"
+msgstr ""
+
+#: templates/admin/access-preview.php:8
+#: templates/admin/profile-copy.php:38
+#: templates/admin/settings.php:19
+#: templates/admin/settings.php:21
+msgid "No"
+msgstr ""
+
+#: templates/admin/access-preview.php:11
+msgid "Access preview"
+msgstr ""
+
+#: templates/admin/access-preview.php:12
+msgid "This is a read-only snapshot of saved settings and the menus registered on this administrator screen. Other plugins may add role-specific items or make additional checks on their own pages."
+msgstr ""
+
+#: templates/admin/access-preview.php:15
+#: templates/admin/settings.php:18
+msgid "Stored Appearance permission"
+msgstr ""
+
+#: templates/admin/access-preview.php:16
+#: templates/admin/settings.php:20
+msgid "Active plugin Appearance grant"
+msgstr ""
+
+#: templates/admin/access-preview.php:18
+msgid "Sample user"
+msgstr ""
+
+#: templates/admin/access-preview.php:19
+msgid "Effective Appearance permission for sample user"
+msgstr ""
+
+#: templates/admin/access-preview.php:24
+msgid "The sample is one existing user with this role. Their other roles and user-specific permissions also apply. Menu results below are estimates based on the items registered for this administrator."
+msgstr ""
+
+#: templates/admin/access-preview.php:26
+msgid "Review top-level menu estimates"
+msgstr ""
+
+#: templates/admin/access-preview.php:28
+msgid "Menu"
+msgstr ""
+
+#: templates/admin/access-preview.php:28
+msgid "Estimated status"
+msgstr ""
+
+#: templates/admin/access-preview.php:30
+msgid "Hidden by this plugin"
+msgstr ""
+
+#: templates/admin/access-preview.php:30
+msgid "User lacks menu capability"
+msgstr ""
+
+#: templates/admin/access-preview.php:30
+msgid "Potentially visible"
+msgstr ""
+
+#: templates/admin/access-preview.php:30
+msgid "Capability unknown"
+msgstr ""
+
+#: templates/admin/access-preview.php:36
+msgid "No existing user has this role, so effective user permissions cannot be checked yet."
+msgstr ""
+
+#: templates/admin/access-preview.php:38
+msgid "You need permission to list users to preview effective access."
+msgstr ""
+
+#: templates/admin/help.php:11
+msgid "Settings safety"
+msgstr ""
+
+#: templates/admin/help.php:12
+msgid "Activation and the first request after upgrading reset historical theme-capability grants on built-in WordPress content roles. Missing Administrator theme-management grants are restored only when legacy settings selected Administrator. Changed roles are backed up first. Deactivation ends temporary grants and restrictions. Ordinary uninstall preserves configuration."
+msgstr ""
+
+#: templates/admin/help.php:13
+msgid "Cleanup covers edit_theme_options, edit_themes, update_themes, delete_themes, install_themes and upload_themes. Explicit denials and unrelated permissions are preserved. Custom roles have no WordPress-defined defaults and are left unchanged. WooCommerce grants Shop Manager Appearance access by default; that permission is retained. Other permission tools may independently grant access."
+msgstr ""
+
+#: templates/admin/help.php:15
+msgid "Keep a database backup before downgrading. Legacy options are preserved exactly as they were at upgrade; changes made in version 4 are not written back into the older format."
+msgstr ""
+
+#: templates/admin/help.php:16
+msgid "Export settings"
+msgstr ""
+
+#: templates/admin/help.php:17
+msgid "Import settings"
+msgstr ""
+
+#: templates/admin/help.php:18
+msgid "Paste a settings export below. Imported profiles replace matching profiles; other profiles and selected roles are retained. A backup is saved first."
+msgstr ""
+
+#: templates/admin/help.php:23
+msgid "Settings JSON"
+msgstr ""
+
+#: templates/admin/help.php:25
+msgid "Import and merge profiles"
+msgstr ""
+
+#: templates/admin/help.php:29
+msgid "Restore a settings backup"
+msgstr ""
+
+#: templates/admin/help.php:34
+msgid "Saved configuration"
+msgstr ""
+
+#: templates/admin/help.php:44
+msgid "Restore backup"
+msgstr ""
+
+#: templates/admin/help.php:49
+msgid "Role permission reset backups"
+msgstr ""
+
+#: templates/admin/help.php:50
+msgid "The ten most recent role-capability snapshots are kept separately from settings backups. Download them before restoring a capability with a role-management tool; restoring an entire snapshot automatically could overwrite permissions changed by another plugin."
+msgstr ""
+
+#: templates/admin/help.php:58
+msgid "Download role permission backups"
+msgstr ""
+
+#: templates/admin/help.php:60
+msgid "Compatibility diagnostics"
+msgstr ""
+
+#: templates/admin/help.php:61
+msgid "This summary omits account details, site URLs and secrets. Menu and toolbar rules use stable IDs; plugins still enforce their own permissions."
+msgstr ""
+
+#: templates/admin/help.php:62
+msgid "Diagnostic summary"
+msgstr ""
+
+#: templates/admin/help.php:64
+msgid "Copy diagnostics"
+msgstr ""
+
+#: templates/admin/help.php:65
+msgid "Support forum"
+msgstr ""
+
+#: templates/admin/help.php:65
+msgid "Documentation and source"
+msgstr ""
+
+#: templates/admin/profile-copy.php:18
+msgid "Copy this role’s profile"
+msgstr ""
+
+#: templates/admin/profile-copy.php:19
+msgid "Copy the saved Appearance, admin menu and toolbar settings to another role. The destination role’s profile is replaced; its selected or paused status stays the same. Stored WordPress role capabilities are unchanged."
+msgstr ""
+
+#: templates/admin/profile-copy.php:24
+msgid "Destination role"
+msgstr ""
+
+#: templates/admin/profile-copy.php:26
+msgid "Choose a role"
+msgstr ""
+
+#: templates/admin/profile-copy.php:31
+msgid "Review copy"
+msgstr ""
+
+#: templates/admin/profile-copy.php:53
+msgid "Setting"
+msgstr ""
+
+#: templates/admin/profile-copy.php:53
+msgid "Current destination"
+msgstr ""
+
+#: templates/admin/profile-copy.php:53
+msgid "After copy"
+msgstr ""
+
+#: templates/admin/profile-copy.php:55
+msgid "Appearance grant"
+msgstr ""
+
+#: templates/admin/profile-copy.php:56
+msgid "Customizer restriction"
+msgstr ""
+
+#: templates/admin/profile-copy.php:57
+msgid "Hidden Appearance areas"
+msgstr ""
+
+#: templates/admin/profile-copy.php:58
+msgid "Hidden admin menu rules"
+msgstr ""
+
+#: templates/admin/profile-copy.php:59
+msgid "Hidden toolbar rules"
+msgstr ""
+
+#: templates/admin/profile-copy.php:62
+msgid "Review both profiles before copying. The settings backup can restore the destination profile if needed."
+msgstr ""
+
+#: templates/admin/profile-copy.php:69
+msgid "Copy reviewed profile"
+msgstr ""
+
+#: templates/admin/role-reset.php:10
+msgid "Reset Appearance permissions"
+msgstr ""
+
+#: templates/admin/role-reset.php:12
+msgid "For this built-in WordPress role, reset removes a stored edit_theme_options grant and turns off this plugin’s appearance grant and Customizer restriction. Other capabilities, menu rules and roles are unchanged. If another plugin added the grant, it may add it again. A copy of the role’s capabilities is saved before removal."
+msgstr ""
+
+#: templates/admin/role-reset.php:14
+msgid "WordPress has no default permissions for this plugin-defined role. Reset turns off this plugin’s appearance grant and Customizer restriction, while preserving capabilities supplied by WooCommerce or other plugins. WooCommerce grants Shop Manager Appearance access by default."
+msgstr ""
+
+#: templates/admin/role-reset.php:23
+msgid "Reset permissions to WordPress defaults"
+msgstr ""
+
+#: templates/admin/role-reset.php:23
+msgid "Reset this plugin’s permissions"
+msgstr ""
+
+#: templates/admin/role-reset.php:27
+msgid "This role is unavailable or cannot be reset with your current permissions."
+msgstr ""
+
+#: templates/admin/roles.php:6
+msgid "Roles using Editor Access"
+msgstr ""
+
+#: templates/admin/roles.php:7
+msgid "Tick the roles that should use these settings, then save. Use Edit access beside a role to configure its permissions. Unticking a role pauses its profile without deleting it. Administrators, super admins and users with Manage Options remain unaffected."
+msgstr ""
+
+#: templates/admin/roles.php:13
+msgid "Editing access"
+msgstr ""
+
+#: templates/admin/roles.php:13
+msgid "Edit access"
+msgstr ""
+
+#: templates/admin/roles.php:15
+msgid "Role unavailable; saved profile retained"
+msgstr ""
+
+#. translators: %s: name of the WordPress role being configured.
+#: templates/admin/roles.php:22
+#, php-format
+msgid "Appearance permissions for %s"
+msgstr ""
+
+#: templates/admin/roles.php:26
+msgid "This profile is inactive until you tick the role above and save."
+msgstr ""
+
+#: templates/admin/roles.php:28
+msgid "Add appearance access while this plugin is active"
+msgstr ""
+
+#: templates/admin/roles.php:29
+msgid "WordPress uses the same capability for widgets, menus, Site Editor and some theme options. Existing permissions and explicit denials from WordPress or other plugins are respected. Unchecking this does not revoke permissions granted elsewhere or retained from an older version."
+msgstr ""
+
+#: templates/admin/roles.php:33
+msgid "WooCommerce grants Shop Manager this Appearance permission by default. It remains after this plugin is deactivated."
+msgstr ""
+
+#: templates/admin/roles.php:35
+msgid "This built-in role has a stored Appearance permission beyond its WordPress default. Turning off the plugin grant above will not remove it; use the reset action below if you want the default."
+msgstr ""
+
+#: templates/admin/roles.php:37
+msgid "This plugin-defined role has a stored Appearance permission. Its owning plugin controls that permission, so the reset below leaves it intact."
+msgstr ""
+
+#: templates/admin/roles.php:40
+msgid "Deny direct access to the WordPress Customizer"
+msgstr ""
+
+#: templates/admin/roles.php:41
+msgid "This optional permission restriction uses WordPress capability checks and also prevents Customizer saves. It does not restrict widgets, Site Editor or third-party settings pages."
+msgstr ""
+
+#: templates/admin/roles.php:42
+msgid "To hide Appearance links, use the Admin Menu tab for this role."
+msgstr ""
+
+#: templates/admin/roles.php:43
+msgid "For users with multiple selected roles, hiding or a Customizer restriction in any matching profile takes precedence. Any matching profile may add appearance access."
+msgstr ""
+
+#: templates/admin/settings.php:9
+msgid "Give selected roles appearance access and simplify their WordPress workspace."
+msgstr ""
+
+#: templates/admin/settings.php:11
+msgid "No roles are available to configure. Settings and backups are retained below."
+msgstr ""
+
+#: templates/admin/settings.php:17
+msgid "Reset verification:"
+msgstr ""
+
+#: templates/admin/settings.php:22
+msgid "View backups"
+msgstr ""
+
+#: templates/admin/settings.php:28
+msgid "Settings cannot be safely edited. Stored data has been preserved. Export it and check the migration guidance before making changes."
+msgstr ""
+
+#: templates/admin/settings.php:30
+msgid "Editor Access settings"
+msgstr ""
+
+#: templates/admin/settings.php:33
+msgid "Roles & Access"
+msgstr ""
+
+#: templates/admin/settings.php:34
+msgid "Admin Menu"
+msgstr ""
+
+#: templates/admin/settings.php:35
+msgid "Toolbar"
+msgstr ""
+
+#: templates/admin/settings.php:36
+msgid "Help & Backups"
+msgstr ""
+
+#: templates/admin/settings.php:46
+msgid "Role"
+msgstr ""
+
+#: templates/admin/settings.php:49
+msgid "unavailable"
+msgstr ""
+
+#: templates/admin/settings.php:52
+msgid "Switch role"
+msgstr ""
+
+#: templates/admin/settings.php:54
+msgid "This profile is inactive. Select the role on Roles & Access to apply it."
+msgstr ""
+
+#: templates/admin/settings.php:73
+msgid "Role settings"
+msgstr ""
+
+#: templates/admin/settings.php:76
+msgid "Save Changes"
+msgstr ""
+
+#: templates/admin/settings.php:77
+msgid "Reset settings for this role"
+msgstr ""
+
+#: templates/admin/visibility.php:8
+msgid "Appearance menu links"
+msgstr ""
+
+#: templates/admin/visibility.php:9
+msgid "Checked links are hidden for this role. Hiding a link does not deny direct access; available screens depend on the active theme and WordPress version."
+msgstr ""
+
+#: templates/admin/visibility.php:10
+msgid "Menus / Navigation, Identity, Styles, Patterns and Templates also hide their sidebar links inside the Site Editor. These settings do not prevent editing through other routes."
+msgstr ""
+
+#: templates/admin/visibility.php:16
+msgid "Your block theme uses Site Editor and block navigation. Classic Menus and Widgets appear only when the theme supports them."
+msgstr ""
+
+#: templates/admin/visibility.php:16
+msgid "Your classic theme controls which Menus, Widgets and Customizer screens are available."
+msgstr ""
+
+#: templates/admin/visibility.php:18
+msgid "Hide admin menu links"
+msgstr ""
+
+#: templates/admin/visibility.php:18
+msgid "Hide toolbar items"
+msgstr ""
+
+#: templates/admin/visibility.php:19
+msgid "Checked items are hidden for this role. Other plugins still control access permissions. Rules for unavailable items are retained until you explicitly change or reset them."
+msgstr ""
+
+#: templates/admin/visibility.php:21
+msgid "The default list shows items this role has permission to use, including links hidden by Editor Access so you can unhide them. Availability is estimated from the role permissions and saved profile; individual accounts and other plugins can differ."
+msgstr ""
+
+#: templates/admin/visibility.php:24
+msgid "Apply toolbar rules on"
+msgstr ""
+
+#: templates/admin/visibility.php:28
+msgid "Admin and frontend"
+msgstr ""
+
+#: templates/admin/visibility.php:29
+msgid "Admin only"
+msgstr ""
+
+#: templates/admin/visibility.php:30
+msgid "Frontend only"
+msgstr ""
+
+#: templates/admin/visibility.php:36
+msgid "The list reflects the toolbar available to your administrator account on this screen. Saved frontend-only or role-specific items appear as unavailable here. Appearance link settings apply in both contexts."
+msgstr ""
+
+#. translators: %s: localized number of saved rules whose items are not registered on this screen.
+#: templates/admin/visibility.php:51
+#, php-format
+msgid "%s saved rule refers to an unavailable item."
+msgid_plural "%s saved rules refer to unavailable items."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/visibility.php:58
+msgid "Show all items"
+msgstr ""
+
+#: templates/admin/visibility.php:59
+msgid "Include items already hidden by role permissions and unavailable plugin items."
+msgstr ""
+
+#: templates/admin/visibility.php:60
+msgid "Apply view"
+msgstr ""
+
+#: templates/admin/visibility.php:64
+msgid "Find an item"
+msgstr ""
+
+#: templates/admin/visibility.php:66
+msgid "Hide visible items"
+msgstr ""
+
+#: templates/admin/visibility.php:67
+msgid "Show visible items"
+msgstr ""
+
+#: templates/admin/visibility.php:68
+msgid "Collapse all"
+msgstr ""
+
+#: templates/admin/visibility.php:69
+msgid "Expand all"
+msgstr ""
+
+#: templates/admin/visibility.php:73
+msgid "Hide"
+msgstr ""
+
+#: templates/admin/visibility.php:73
+msgid "Item"
+msgstr ""
+
+#: templates/admin/visibility.php:77
+msgid "Role visibility"
+msgstr ""
+
+#: templates/admin/visibility.php:77
+msgid "Details"
+msgstr ""
+
+#: templates/admin/visibility.php:81
+msgid "Available to this role"
+msgstr ""
+
+#: templates/admin/visibility.php:82
+msgid "Already hidden by role permissions"
+msgstr ""
+
+#: templates/admin/visibility.php:83
+msgid "Already hidden with its parent menu"
+msgstr ""
+
+#: templates/admin/visibility.php:84
+msgid "Hidden by Editor Access"
+msgstr ""
+
+#: templates/admin/visibility.php:85
+msgid "Parent hidden by Editor Access"
+msgstr ""
+
+#: templates/admin/visibility.php:86
+msgid "Saved hide rule; currently not applied"
+msgstr ""
+
+#: templates/admin/visibility.php:87
+msgid "Unavailable item; saved rule retained"
+msgstr ""
+
+#: templates/admin/visibility.php:88
+msgid "Availability unknown"
+msgstr ""
+
+#: templates/admin/visibility.php:116
+msgid "Use Appearance menu links above"
+msgstr ""
+
+#: templates/admin/visibility.php:118
+msgid "Legacy rule: applies wherever this slug appears"
+msgstr ""
+
+#: templates/admin/visibility.php:120
+msgid "Unavailable here; saved rule retained"
+msgstr ""
+
+#: templates/admin/visibility.php:133
+msgid "No items are available on this screen. Existing rules are preserved."
+msgstr ""
+
+#: templates/admin/visibility.php:136
+msgid "Hiding a parent also hides its links to child items. Child rules stay saved independently."
 msgstr ""

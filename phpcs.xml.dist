@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="Editor Menu and Widget Access">
+	<description>WordPress conventions for the namespaced runtime.</description>
+	<arg name="extensions" value="php"/>
+	<arg value="sp"/>
+	<file>editor-menu-widget-access.php</file>
+	<file>editor-menu-and-widget-access.php</file>
+	<file>uninstall.php</file>
+	<file>includes</file>
+	<file>templates</file>
+	<rule ref="WordPress-Extra">
+		<!-- Namespaced components use PSR-style filenames. -->
+		<exclude name="WordPress.Files.FileName"/>
+	</rule>
+	<rule ref="WordPress.WP.I18n">
+		<properties><property name="text_domain" type="array"><element value="editor-menu-and-widget-access"/></property></properties>
+	</rule>
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties><property name="prefixes" type="array"><element value="emwa"/><element value="EditorMenuWidgetAccess"/></property></properties>
+	</rule>
+</ruleset>

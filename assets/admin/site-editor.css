@@ -1,0 +1,9 @@
+/* Visibility only. Stable core IDs avoid translated labels and survive sidebar rerenders. */
+body.emwa-hide-site-menus #site-editor #navigation-navigation-item,
+body.emwa-hide-site-identity #site-editor #identity-navigation-item,
+body.emwa-hide-site-styles #site-editor #global-styles-navigation-item,
+body.emwa-hide-site-styles #site-editor #stylebook-navigation-item,
+body.emwa-hide-site-patterns #site-editor #patterns-navigation-item,
+body.emwa-hide-site-templates #site-editor #template-navigation-item {
+	display: none;
+}

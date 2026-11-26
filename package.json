@@ -1,0 +1,14 @@
+{
+  "name": "editor-menu-and-widget-access",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Development-only browser checks; plugin runtime has no npm dependencies.",
+  "scripts": {
+    "lint:js": "node --check assets/admin/settings.js",
+    "test:browser": "node tests/browser.cjs",
+    "test:site-editor": "node tests/site-editor.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  }
+}
